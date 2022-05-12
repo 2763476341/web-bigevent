@@ -14,7 +14,7 @@ $(function () {
     option.complete = (res) => {
       res = res.responseJSON;
       console.log(res);
-      if (res.status == 1) {
+      if (res.status != 0 && res.message == "身份认证失败！") {
         location.href = "/login.html";
         localStorage.removeItem("token");
       }
